@@ -2,176 +2,177 @@ export const properties = [
   {
     id: '1',
     type: 'house',
-    price: 750000,
+    price: 7500000,
     bedrooms: 4,
     dateAdded: '2024-03-15',
     postcode: 'BR1',
     title: 'Stunning 4 Bedroom Victorian House',
     shortDescription: 'Beautiful Victorian property with original features and modern amenities',
-    longDescription: 'This exceptional Victorian house offers the perfect blend of period features and modern living. With high ceilings, original fireplaces, and a newly renovated kitchen, this property provides spacious family accommodation across three floors. The house benefits from a south-facing garden and off-street parking.',
-    mainImage: 'https://images.unsplash.com/photo-1518780664697-55e3ad937233',
+    longDescription: 'Step into timeless charm with this stunning 4-bedroom Victorian house, beautifully combining classic architecture with modern functionality. This home boasts original period features, including high ceilings, sash windows, and intricate moldings, giving it a distinctive character. The spacious living and dining areas are bathed in natural light from large bay windows, creating a warm and inviting atmosphere. A modern kitchen complements the home\'s historic charm, offering a perfect balance of style and practicality.',
+    mainImage: '/images/1.jpg',
     images: [
-      'https://images.unsplash.com/photo-1518780664697-55e3ad937233',
-      'https://images.unsplash.com/photo-1505691938895-1758d7feb511',
-      'https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6',
-      'https://images.unsplash.com/photo-1484154218962-a197022b5858',
-      'https://images.unsplash.com/photo-1507089947368-19c1da9775ae',
-      'https://images.unsplash.com/photo-1502005097973-6a7082348e28'
+      '/images/1.jpg',
+      '/images/2.jpg',
+      '/images/3.jpg',
+      '/images/4.jpg',
+      '/images/5.jpg',
+      '/images/6.jpg'
     ],
-    floorPlan: 'https://images.unsplash.com/photo-1536483229849-8f04c3c1e8f5',
+    floorPlan: '/images/FloorPlans/1.jpg',
     location: {
-      lat: 51.4065,
-      lng: 0.0245
+      lat: 6.902684688568115,
+      lng: 79.9194564819336
     }
   },
   {
     id: '2',
     type: 'flat',
-    price: 450000,
+    price: 4500000,
     bedrooms: 2,
     dateAdded: '2024-03-10',
     postcode: 'NW1',
     title: 'Modern 2 Bedroom Apartment in Camden',
     shortDescription: 'Contemporary apartment with stunning city views',
-    longDescription: 'This stylish apartment offers modern city living at its finest. Located in the heart of Camden, the property features an open-plan living area, two double bedrooms, and a private balcony with spectacular views of London. The development includes a 24-hour concierge and residents\' gym.',
-    mainImage: 'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267',
+    longDescription: 'This modern 2-bedroom flat combines style, comfort, and convenience in one perfect package. The bright open-plan living and dining area is ideal for relaxing or entertaining, while the sleek kitchen boasts integrated appliances and contemporary finishes. Both bedrooms are spacious and well-lit, offering plenty of storage for a clutter-free lifestyle. Located in a prime area close to local shops, restaurants, and excellent transport links, this property is perfect for professionals, couples, or investors. With its modern design and move-in-ready condition, this flat offers a fantastic opportunity to enjoy a comfortable, connected lifestyle.',
+    mainImage: '/images/8.jpg',
     images: [
-      'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267',
-      'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688',
-      'https://images.unsplash.com/photo-1493809842364-78817add7ffb',
-      'https://images.unsplash.com/photo-1484154218962-a197022b5858',
-      'https://images.unsplash.com/photo-1484101403633-562f891dc89a',
-      'https://images.unsplash.com/photo-1507089947368-19c1da9775ae'
+      '/images/7.jpg',
+      '/images/8.jpg',
+      '/images/9.jpg',
+      '/images/10.jpg',
+      '/images/11.jpg',
+      '/images/12.jpg'
     ],
-    floorPlan: 'https://images.unsplash.com/photo-1536483229849-8f04c3c1e8f5',
+    floorPlan: '/images/FloorPlans/2.jpg',
     location: {
-      lat: 51.5390,
-      lng: -0.1426
+      lat: 6.8953034,
+      lng: 79.8556977
     }
   },
   {
     id: '3',
     type: 'house',
-    price: 925000,
+    price: 9250000,
     bedrooms: 5,
     dateAdded: '2024-03-12',
     postcode: 'BR1',
     title: 'Spacious 5 Bedroom Family Home',
     shortDescription: 'Detached house with large garden and modern interiors',
-    longDescription: 'An impressive five-bedroom detached house offering extensive living space perfect for family life. Features include a designer kitchen/breakfast room, multiple reception rooms, master bedroom with en-suite, landscaped garden, and double garage.',
-    mainImage: 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6',
+    longDescription: 'This stunning 5-bedroom house offers space, style, and comfort for modern family living. Featuring a spacious layout, the property includes a bright and airy living room, a formal dining area, and a modern kitchen fitted with high-quality appliances. Each of the five bedrooms is generously sized, with the master boasting an en-suite for added privacy. The house also includes multiple bathrooms, ample storage, and a well-maintained garden ideal for relaxation or entertaining. Situated in a desirable location close to schools, shops, and excellent transport links, this home is perfect for growing families or those seeking extra space.',
+    mainImage: '/images/13.jpg',
     images: [
-      'https://images.unsplash.com/photo-1564013799919-ab600027ffc6',
-      'https://images.unsplash.com/photo-1505691938895-1758d7feb511',
-      'https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6',
-      'https://images.unsplash.com/photo-1484154218962-a197022b5858',
-      'https://images.unsplash.com/photo-1507089947368-19c1da9775ae',
-      'https://images.unsplash.com/photo-1502005097973-6a7082348e28'
+      '/images/13.jpg',
+      '/images/15.jpg',
+      '/images/16.jpg',
+      '/images/17.jpg',
+      '/images/18.jpg',
+      '/images/14.jpg'
     ],
-    floorPlan: 'https://images.unsplash.com/photo-1536483229849-8f04c3c1e8f5',
+    floorPlan: '/images/FloorPlans/3.jpg',
     location: {
-      lat: 51.4075,
-      lng: 0.0255
+      lat: 6.9135263,
+      lng: 79.8508126
     }
   },
   {
     id: '4',
     type: 'flat',
-    price: 350000,
+    price: 3500000,
     bedrooms: 1,
     dateAdded: '2024-03-14',
     postcode: 'NW1',
     title: 'Stylish 1 Bedroom Apartment',
     shortDescription: 'Modern apartment in prime location',
-    longDescription: 'Beautifully presented one-bedroom apartment in a sought-after development. The property features high-specification finishes throughout, an open-plan living area, modern bathroom, and private balcony.',
-    mainImage: 'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267',
+    longDescription: 'This modern 1-bedroom flat is perfect for singles or couples seeking a stylish and convenient home. The property features a bright open-plan living area, a sleek kitchen with integrated appliances, and a spacious bedroom with ample storage. Located in a prime area close to local shops, restaurants, and excellent transport links, this flat offers the ideal combination of comfort and accessibility. Whether you\'re a first-time buyer or an investor, this property is a fantastic opportunity.',
+    mainImage: '/images/19.jpg',
     images: [
-      'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267',
-      'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688',
-      'https://images.unsplash.com/photo-1493809842364-78817add7ffb',
-      'https://images.unsplash.com/photo-1484154218962-a197022b5858',
-      'https://images.unsplash.com/photo-1484101403633-562f891dc89a',
-      'https://images.unsplash.com/photo-1507089947368-19c1da9775ae'
+      '/images/19.jpg',
+      '/images/20.jpg',
+      '/images/21.jpg',
+      '/images/22.jpg',
+      '/images/23.jpg',
+      '/images/24.jpg'
     ],
-    floorPlan: 'https://images.unsplash.com/photo-1536483229849-8f04c3c1e8f5',
+    floorPlan: '/images/FloorPlans/4.jpg',
     location: {
-      lat: 51.5380,
-      lng: -0.1436
+      lat: 7.3708832,
+      lng: 79.8972131
     }
   },
   {
     id: '5',
     type: 'house',
-    price: 550000,
+    price: 5500000,
     bedrooms: 3,
     dateAdded: '2024-03-13',
     postcode: 'BR1',
     title: 'Charming 3 Bedroom Semi-Detached',
-    shortDescription: 'Well-maintained family home with garden',
-    longDescription: 'This delightful three-bedroom semi-detached house offers comfortable family accommodation. Features include a through lounge/dining room, fitted kitchen, conservatory, three good-sized bedrooms, family bathroom, and a lovely rear garden.',
-    mainImage: 'https://images.unsplash.com/photo-1518780664697-55e3ad937233',
+    shortDescription: 'Well-maintained home with garden',
+    longDescription: '\n' +
+        'This lovely 3-bedroom house is the perfect family home, offering a spacious layout and modern features throughout. The bright and airy living room flows into a generous dining area, ideal for family gatherings, while the well-equipped kitchen offers plenty of space for meal prep and storage. Each of the three bedrooms is comfortably sized, with the master bedroom featuring ample storage. The property also benefits from a private garden, ideal for outdoor activities or relaxation. Located in a sought-after area with easy access to local schools, shops, and transport links, this home is perfect for those seeking both comfort and convenience.',
+    mainImage: '/images/25.jpg',
     images: [
-      'https://images.unsplash.com/photo-1518780664697-55e3ad937233',
-      'https://images.unsplash.com/photo-1505691938895-1758d7feb511',
-      'https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6',
-      'https://images.unsplash.com/photo-1484154218962-a197022b5858',
-      'https://images.unsplash.com/photo-1507089947368-19c1da9775ae',
-      'https://images.unsplash.com/photo-1502005097973-6a7082348e28'
+      '/images/25.jpg',
+      '/images/26.jpg',
+      '/images/27.jpg',
+      '/images/28.jpg',
+      '/images/29.jpg',
+      '/images/30.jpg'
     ],
-    floorPlan: 'https://images.unsplash.com/photo-1536483229849-8f04c3c1e8f5',
+    floorPlan: '/images/FloorPlans/5.jpg',
     location: {
-      lat: 51.4055,
-      lng: 0.0235
+      lat: 7.4870464,
+      lng: 80.364908
     }
   },
   {
     id: '6',
     type: 'flat',
-    price: 299999,
+    price: 2999990,
     bedrooms: 2,
     dateAdded: '2024-03-11',
     postcode: 'NW1',
     title: 'Cozy 2 Bedroom Garden Flat',
     shortDescription: 'Ground floor flat with private garden',
-    longDescription: 'A well-presented ground floor flat with its own private garden. The property comprises two bedrooms, a modern fitted kitchen, spacious reception room, and contemporary bathroom. Benefits from a share of freehold.',
-    mainImage: 'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267',
+    longDescription: 'This charming 2-bedroom flat offers modern living in a convenient location. The open-plan living and dining area is bright and spacious, providing a perfect space for relaxation or entertaining guests. The contemporary kitchen is fully equipped with integrated appliances, while both bedrooms are generously sized with ample storage. The flat also benefits from a modern bathroom and good natural light throughout. Ideally situated near local shops, restaurants, and excellent transport links, this property is perfect for professionals, couples, or small families.',
+    mainImage: '/images/31.jpg',
     images: [
-      'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267',
-      'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688',
-      'https://images.unsplash.com/photo-1493809842364-78817add7ffb',
-      'https://images.unsplash.com/photo-1484154218962-a197022b5858',
-      'https://images.unsplash.com/photo-1484101403633-562f891dc89a',
-      'https://images.unsplash.com/photo-1507089947368-19c1da9775ae'
+      '/images/31.jpg',
+      '/images/32.jpg',
+      '/images/33.jpg',
+      '/images/34.jpg',
+      '/images/35.jpg',
+      '/images/36.jpg'
     ],
-    floorPlan: 'https://images.unsplash.com/photo-1536483229849-8f04c3c1e8f5',
+    floorPlan: '/images/FloorPlans/6.jpg',
     location: {
-      lat: 51.5370,
-      lng: -0.1446
+      lat: 6.8750183,
+      lng: 79.8574596
     }
   },
   {
     id: '7',
     type: 'house',
-    price: 850000,
+    price: 8500000,
     bedrooms: 4,
     dateAdded: '2024-03-09',
     postcode: 'BR1',
     title: 'Elegant 4 Bedroom Detached House',
     shortDescription: 'Beautiful family home with extensive gardens',
-    longDescription: 'An exceptional four-bedroom detached house offering spacious and versatile accommodation. The property features a grand entrance hall, multiple reception rooms, a stunning kitchen/breakfast room, master bedroom with en-suite, three further bedrooms, family bathroom, and a large landscaped garden.',
-    mainImage: 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6',
+    longDescription: 'This beautiful 4-bedroom house offers a perfect blend of space, comfort, and modern design. The spacious living room provides a welcoming atmosphere, while the separate dining area is ideal for family meals and gatherings. The fully equipped kitchen features contemporary appliances and ample storage space. Each of the four bedrooms is generously sized, with the master bedroom offering an en-suite for added convenience. The property also boasts a well-maintained garden, perfect for outdoor relaxation or entertaining.',
+    mainImage: '/images/37.jpg',
     images: [
-      'https://images.unsplash.com/photo-1564013799919-ab600027ffc6',
-      'https://images.unsplash.com/photo-1505691938895-1758d7feb511',
-      'https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6',
-      'https://images.unsplash.com/photo-1484154218962-a197022b5858',
-      'https://images.unsplash.com/photo-1507089947368-19c1da9775ae',
-      'https://images.unsplash.com/photo-1502005097973-6a7082348e28'
+      '/images/37.jpg',
+      '/images/38.jpg',
+      '/images/39.jpg',
+      '/images/40.jpg',
+      '/images/41.jpg',
+      '/images/42.jpg'
     ],
-    floorPlan: 'https://images.unsplash.com/photo-1536483229849-8f04c3c1e8f5',
+    floorPlan: '/images/FloorPlans/7.jpg',
     location: {
-      lat: 51.4045,
-      lng: 0.0225
+      lat: 6.7124131,
+      lng: 79.9045759
     }
   }
 ];

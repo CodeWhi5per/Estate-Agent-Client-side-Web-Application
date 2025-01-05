@@ -5,7 +5,7 @@ export default function PropertyCard({ property, onFavorite, isFavorite }) {
   const formatPrice = (price) => {
     return new Intl.NumberFormat('en-GB', {
       style: 'currency',
-      currency: 'GBP',
+      currency: 'LKR',
     }).format(price);
   };
 

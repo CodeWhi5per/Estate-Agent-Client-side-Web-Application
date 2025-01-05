@@ -6,6 +6,8 @@ import PropertyMap from './PropertyMap.jsx';
 
 export default function PropertyDetails({ property, isFavorite, onToggleFavorite }) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedImage, setSelectedImage] = useState(null);
 
   const nextImage = () => {
     setCurrentImageIndex((prev) =>
@@ -26,6 +28,16 @@ export default function PropertyDetails({ property, isFavorite, onToggleFavorite
     }).format(price);
   };
 
+  const openModal = (image) => {
+    setSelectedImage(image);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setSelectedImage(null);
+  };
+
   return (
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="bg-white rounded-lg shadow-lg overflow-hidden">
@@ -34,7 +46,8 @@ export default function PropertyDetails({ property, isFavorite, onToggleFavorite
             <img
                 src={property.images[currentImageIndex]}
                 alt={`Property image ${currentImageIndex + 1}`}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover cursor-pointer"
+                onClick={() => openModal(property.images[currentImageIndex])}
             />
             <button
                 onClick={previousImage}
@@ -90,14 +103,14 @@ export default function PropertyDetails({ property, isFavorite, onToggleFavorite
           {/* Tabs */}
           <Tabs className="p-6">
             <TabList className="flex border-b">
-              <Tab className="px-4 py-2 text-gray-600 cursor-pointer border-b-2 border-transparent hover:text-gray-900 hover:border-gray-300">
-                Description
+              <Tab className="px-4 py-2 text-gray-600 cursor-pointer border-b-2 border-transparent hover:text-blue-600 hover:border-blue-600 hover:border-b-4 text-lg font-bold">
+                DESCRIPTION
               </Tab>
-              <Tab className="px-4 py-2 text-gray-600 cursor-pointer border-b-2 border-transparent hover:text-gray-900 hover:border-gray-300">
-                Floor Plan
+              <Tab className="px-4 py-2 text-gray-600 cursor-pointer border-b-2 border-transparent hover:text-blue-600 hover:border-blue-600 hover:border-b-4 text-lg font-bold">
+                FLOOR PLAN
               </Tab>
-              <Tab className="px-4 py-2 text-gray-600 cursor-pointer border-b-2 border-transparent hover:text-gray-900 hover:border-gray-300">
-                Map
+              <Tab className="px-4 py-2 text-gray-600 cursor-pointer border-b-2 border-transparent hover:text-blue-600 hover:border-blue-600 hover:border-b-4 text-lg font-bold">
+                MAP
               </Tab>
             </TabList>
 
@@ -130,7 +143,7 @@ export default function PropertyDetails({ property, isFavorite, onToggleFavorite
           {property.images.map((image, index) => (
               <button
                   key={index}
-                  onClick={() => setCurrentImageIndex(index)}
+                  onClick={() => openModal(image)}
                   className={`relative rounded-lg overflow-hidden ${
                       index === currentImageIndex ? 'ring-2 ring-blue-500' : ''
                   }`}
@@ -143,6 +156,21 @@ export default function PropertyDetails({ property, isFavorite, onToggleFavorite
               </button>
           ))}
         </div>
+
+        {/* Image Modal */}
+        {isModalOpen && (
+            <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50">
+              <div className="relative bg-white rounded-lg overflow-hidden">
+                <button
+                    onClick={closeModal}
+                    className="absolute top-2 right-2 bg-red-600 rounded-full w-12 h-12 flex items-center justify-center"
+                >
+                  <span className="text-4xl text-white">&times;</span>
+                </button>
+                <img src={selectedImage} alt="Selected" className="max-w-full max-h-screen"/>
+              </div>
+            </div>
+        )}
       </div>
   );
 }
