@@ -18,24 +18,24 @@ function App() {
     const handleSearch = (criteria) => {
         let filtered = properties;
 
-        if (criteria.type) {
-            filtered = filtered.filter(p => p.type === criteria.type);
+        if (criteria.type && criteria.type !== 'Any') {
+            filtered = filtered.filter(p => p.type === criteria.type.toLowerCase());
         }
 
         if (criteria.minPrice) {
-            filtered = filtered.filter(p => p.price >= parseInt(criteria.minPrice));
+            filtered = filtered.filter(p => p.price >= parseInt(criteria.minPrice, 10));
         }
 
         if (criteria.maxPrice) {
-            filtered = filtered.filter(p => p.price <= parseInt(criteria.maxPrice));
+            filtered = filtered.filter(p => p.price <= parseInt(criteria.maxPrice, 10));
         }
 
         if (criteria.minBedrooms) {
-            filtered = filtered.filter(p => p.bedrooms >= parseInt(criteria.minBedrooms));
+            filtered = filtered.filter(p => p.bedrooms >= parseInt(criteria.minBedrooms, 10));
         }
 
         if (criteria.maxBedrooms) {
-            filtered = filtered.filter(p => p.bedrooms <= parseInt(criteria.maxBedrooms));
+            filtered = filtered.filter(p => p.bedrooms <= parseInt(criteria.maxBedrooms, 10));
         }
 
         if (criteria.dateFrom) {
