@@ -20,6 +20,18 @@ export default function FavoritesList({ favorites, onRemove, onClear }) {
     }
   };
 
+  const handleDragStart = (e, propertyId) => {
+    e.dataTransfer.setData('propertyId', propertyId);
+    e.dataTransfer.effectAllowed = 'move';
+  };
+
+  const handleDragEnd = (e, propertyId) => {
+    const dropTarget = document.elementFromPoint(e.clientX, e.clientY);
+    if (!dropTarget || !dropTarget.closest('.favorites-list')) {
+      onRemove(propertyId);
+    }
+  };
+
   if (favorites.length === 0) {
     return (
         <div
@@ -35,7 +47,7 @@ export default function FavoritesList({ favorites, onRemove, onClear }) {
 
   return (
       <div
-          className="bg-white rounded-lg shadow-md p-4"
+          className="bg-white rounded-lg shadow-md p-4 favorites-list"
           onDragOver={handleDragOver}
           onDragLeave={handleDragLeave}
           onDrop={handleDrop}
@@ -54,6 +66,9 @@ export default function FavoritesList({ favorites, onRemove, onClear }) {
               <div
                   key={property.id}
                   className="flex items-center gap-4 p-2 bg-gray-50 rounded"
+                  draggable
+                  onDragStart={(e) => handleDragStart(e, property.id)}
+                  onDragEnd={(e) => handleDragEnd(e, property.id)}
               >
                 <img
                     src={property.mainImage}
