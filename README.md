@@ -55,3 +55,4 @@ This is a Property Search application built with React. It allows users to searc
 
 ## Credits
 - The image that I used in the project is from https://www.acquest.lk/
+- Floor plan images are from https://www.google.com/
