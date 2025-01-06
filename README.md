@@ -52,3 +52,6 @@ This is a Property Search application built with React. It allows users to searc
 - Lucide React
 - @eslint/eslintrc
 - eslint-plugin-react
+
+## Credits
+- The image that I used in the project is from https://www.acquest.lk/
