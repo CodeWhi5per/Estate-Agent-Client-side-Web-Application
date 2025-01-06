@@ -30,7 +30,7 @@ export default function PropertyDetails({ property, isFavorite, onToggleFavorite
   const formatPrice = (price) => {
     return new Intl.NumberFormat('en-GB', {
       style: 'currency',
-      currency: 'GBP',
+      currency: 'LKR',
     }).format(price);
   };
 
