@@ -8,6 +8,7 @@ This is a Property Search application built with React. It allows users to searc
 - [Installation](#installation)
 - [Usage](#usage)
 - [Dependencies](#dependencies)
+- [Credits](#credits)
 
 
 ## Features
