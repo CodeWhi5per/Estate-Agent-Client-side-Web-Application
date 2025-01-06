@@ -1,25 +1,30 @@
 import { useEffect, useRef, useCallback, useState } from 'react';
 import { createMapOptions } from '../config/maps.js';
 
+// Custom hook to integrate Google Maps with a property
 export const useGoogleMaps = (property) => {
+  // Refs to store map, marker, and info window instances
   const mapRef = useRef(null);
   const markerRef = useRef(null);
   const infoWindowRef = useRef(null);
+  // State to store any error that occurs during map initialization
   const [error, setError] = useState(null);
 
+  // Function to initialize the map
   const initializeMap = useCallback(() => {
+    // Check if property data, Google Maps API, and map container are available
     if (!property || !window.google?.maps || !document.getElementById('map')) {
       return;
     }
 
     try {
-      // Create map instance
+      // Create a new map instance centered at the property's location
       const map = new google.maps.Map(
           document.getElementById('map'),
           createMapOptions(property.location.lat, property.location.lng)
       );
 
-      // Create marker
+      // Create a new marker at the property's location
       const marker = new google.maps.Marker({
         position: property.location,
         map,
@@ -27,7 +32,7 @@ export const useGoogleMaps = (property) => {
         animation: google.maps.Animation.DROP,
       });
 
-      // Create info window
+      // Create a new info window with the property's title and short description
       const infoWindow = new google.maps.InfoWindow({
         content: `
           <div style="padding: 1rem; max-width: 200px;">
@@ -37,26 +42,28 @@ export const useGoogleMaps = (property) => {
         `,
       });
 
-      // Add click listener
+      // Add a click listener to the marker to open the info window
       marker.addListener('click', () => {
         infoWindow.open(map, marker);
       });
 
-      // Store references
+      // Store the map, marker, and info window instances in refs
       mapRef.current = map;
       markerRef.current = marker;
       infoWindowRef.current = infoWindow;
 
     } catch (error) {
+      // Log and set any error that occurs during map initialization
       console.error('Error initializing Google Maps:', error);
       setError(error instanceof Error ? error : new Error('Failed to initialize map'));
     }
   }, [property]);
 
+  // Effect to initialize the map when the component mounts or property changes
   useEffect(() => {
     initializeMap();
 
-    // Cleanup
+    // Cleanup function to remove marker and close info window when component unmounts
     return () => {
       if (markerRef.current) {
         markerRef.current.setMap(null);
@@ -67,6 +74,7 @@ export const useGoogleMaps = (property) => {
     };
   }, [initializeMap]);
 
+  // Return the map, marker, info window instances, and any error
   return {
     map: mapRef.current,
     marker: markerRef.current,

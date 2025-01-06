@@ -5,22 +5,28 @@ import { ChevronLeft, ChevronRight, Heart } from 'lucide-react';
 import PropertyMap from './PropertyMap.jsx';
 
 export default function PropertyDetails({ property, isFavorite, onToggleFavorite }) {
+  // State to track the current image index in the image gallery
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  // State to manage the modal visibility
   const [isModalOpen, setIsModalOpen] = useState(false);
+  // State to store the selected image for the modal
   const [selectedImage, setSelectedImage] = useState(null);
 
+  // Function to go to the next image in the gallery
   const nextImage = () => {
     setCurrentImageIndex((prev) =>
         prev === property.images.length - 1 ? 0 : prev + 1
     );
   };
 
+  // Function to go to the previous image in the gallery
   const previousImage = () => {
     setCurrentImageIndex((prev) =>
         prev === 0 ? property.images.length - 1 : prev - 1
     );
   };
 
+  // Function to format the price to GBP currency format
   const formatPrice = (price) => {
     return new Intl.NumberFormat('en-GB', {
       style: 'currency',
@@ -28,11 +34,13 @@ export default function PropertyDetails({ property, isFavorite, onToggleFavorite
     }).format(price);
   };
 
+  // Function to open the modal with the selected image
   const openModal = (image) => {
     setSelectedImage(image);
     setIsModalOpen(true);
   };
 
+  // Function to close the modal
   const closeModal = () => {
     setIsModalOpen(false);
     setSelectedImage(null);
@@ -100,7 +108,7 @@ export default function PropertyDetails({ property, isFavorite, onToggleFavorite
             </div>
           </div>
 
-          {/* Tabs */}
+          {/* Tabs for Description, Floor Plan, and Map */}
           <Tabs className="p-6">
             <TabList className="flex border-b">
               <Tab className="px-4 py-2 text-gray-600 cursor-pointer border-b-2 border-transparent hover:text-blue-600 hover:border-blue-600 hover:border-b-4 text-lg font-bold">

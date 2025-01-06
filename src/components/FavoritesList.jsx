@@ -2,36 +2,42 @@ import React from 'react';
 import { X } from 'lucide-react';
 
 export default function FavoritesList({ favorites, onRemove, onClear }) {
+  // Handle drag over event
   const handleDragOver = (e) => {
     e.preventDefault();
-    e.currentTarget.classList.add('bg-blue-50');
+    e.currentTarget.classList.add('bg-blue-50'); // Add background color on drag over
   };
 
+  // Handle drag leave event
   const handleDragLeave = (e) => {
-    e.currentTarget.classList.remove('bg-blue-50');
+    e.currentTarget.classList.remove('bg-blue-50'); // Remove background color on drag leave
   };
 
+  // Handle drop event
   const handleDrop = (e) => {
     e.preventDefault();
-    e.currentTarget.classList.remove('bg-blue-50');
-    const propertyId = e.dataTransfer.getData('propertyId');
+    e.currentTarget.classList.remove('bg-blue-50'); // Remove background color on drop
+    const propertyId = e.dataTransfer.getData('propertyId'); // Get property ID from data transfer
     if (propertyId && !favorites.some(f => f.id === propertyId)) {
-      onRemove(propertyId); // Using onRemove as toggle function
+      onRemove(propertyId); // Use onRemove as toggle function if property is not already in favorites
     }
   };
 
+  // Handle drag start event
   const handleDragStart = (e, propertyId) => {
-    e.dataTransfer.setData('propertyId', propertyId);
-    e.dataTransfer.effectAllowed = 'move';
+    e.dataTransfer.setData('propertyId', propertyId); // Set property ID in data transfer
+    e.dataTransfer.effectAllowed = 'move'; // Allow move effect
   };
 
+  // Handle drag end event
   const handleDragEnd = (e, propertyId) => {
-    const dropTarget = document.elementFromPoint(e.clientX, e.clientY);
+    const dropTarget = document.elementFromPoint(e.clientX, e.clientY); // Get drop target element
     if (!dropTarget || !dropTarget.closest('.favorites-list')) {
-      onRemove(propertyId);
+      onRemove(propertyId); // Remove property if dropped outside favorites list
     }
   };
 
+  // return empty state if no favorites
   if (favorites.length === 0) {
     return (
         <div
@@ -45,6 +51,7 @@ export default function FavoritesList({ favorites, onRemove, onClear }) {
     );
   }
 
+  // return favorites list
   return (
       <div
           className="bg-white rounded-lg shadow-md p-4 favorites-list"

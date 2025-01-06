@@ -1,6 +1,6 @@
 export const Property = {
   id: "",
-  type: "house" | "flat", // or "flat"
+  type: "house" | "flat", // Property type (house or flat)
   price: 0,
   bedrooms: 0,
   dateAdded: "",

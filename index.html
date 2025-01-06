@@ -4,11 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Property Search</title>
+  <!-- load the Google Maps API with the specified key and libraries -->
   <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCbUX2mSWLCf3qGFDuUIkLMVXnn5TBULDk&libraries=places"></script>
+  <!-- Content Security Policy to control resources the user agent is allowed to load -->
   <meta http-equiv="Content-Security-Policy" content="default-src 'self' https: data: 'unsafe-inline' 'unsafe-eval'; img-src 'self' https: data:;">
 </head>
 <body>
+<!-- Root element for the React application -->
 <div id="root"></div>
+<!-- Main JavaScript module for the React application -->
 <script type="module" src="/src/main.jsx"></script>
 </body>
 </html>

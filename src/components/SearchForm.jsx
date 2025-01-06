@@ -4,24 +4,27 @@ import { DropdownList, NumberPicker, DatePicker, Combobox } from 'react-widgets'
 import 'react-widgets/styles.css';
 
 export default function SearchForm({ onSearch }) {
+  // State to manage the search criteria
   const [criteria, setCriteria] = useState({
-    type: '',
-    minPrice: null,
-    maxPrice: null,
-    minBedrooms: null,
-    maxBedrooms: null,
-    dateFrom: null,
-    dateTo: null,
-    postcode: '',
+    type: '', // Property type
+    minPrice: null, // Minimum price
+    maxPrice: null, // Maximum price
+    minBedrooms: null, // Minimum number of bedrooms
+    maxBedrooms: null, // Maximum number of bedrooms
+    dateFrom: null, // Start date for the search
+    dateTo: null, // End date for the search
+    postcode: '', // Postcode area
   });
 
+  // Handle form submission
   const handleSubmit = (e) => {
-    e.preventDefault();
-    onSearch(criteria);
+    e.preventDefault(); // Prevent default form submission
+    onSearch(criteria); // Call the onSearch function with the current criteria
   };
 
+  // Handle changes to the search criteria
   const handleChange = (name, value) => {
-    setCriteria((prev) => ({ ...prev, [name]: value }));
+    setCriteria((prev) => ({ ...prev, [name]: value })); // Update the criteria state
   };
 
   return (
@@ -35,9 +38,9 @@ export default function SearchForm({ onSearch }) {
             <DropdownList
                 id="type"
                 name="type"
-                data={['Any', 'House', 'Flat']}
-                value={criteria.type}
-                onChange={(value) => handleChange('type', value)}
+                data={['Any', 'House', 'Flat']} // Options for property type
+                value={criteria.type} // Current value of property type
+                onChange={(value) => handleChange('type', value)} // Handle change in property type
                 className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
             />
           </div>
@@ -50,10 +53,10 @@ export default function SearchForm({ onSearch }) {
             <NumberPicker
                 id="minPrice"
                 name="minPrice"
-                value={criteria.minPrice}
-                onChange={(value) => handleChange('minPrice', value)}
-                min={0}
-                step={1000}
+                value={criteria.minPrice} // Current value of minimum price
+                onChange={(value) => handleChange('minPrice', value)} // Handle change in minimum price
+                min={0} // Minimum value for the number picker
+                step={1000} // Step value for the number picker
                 className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
             />
           </div>
@@ -66,10 +69,10 @@ export default function SearchForm({ onSearch }) {
             <NumberPicker
                 id="maxPrice"
                 name="maxPrice"
-                value={criteria.maxPrice}
-                onChange={(value) => handleChange('maxPrice', value)}
-                min={0}
-                step={1000}
+                value={criteria.maxPrice} // Current value of maximum price
+                onChange={(value) => handleChange('maxPrice', value)} // Handle change in maximum price
+                min={0} // Minimum value for the number picker
+                step={1000} // Step value for the number picker
                 className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
             />
           </div>
@@ -82,9 +85,9 @@ export default function SearchForm({ onSearch }) {
             <NumberPicker
                 id="minBedrooms"
                 name="minBedrooms"
-                value={criteria.minBedrooms}
-                onChange={(value) => handleChange('minBedrooms', value)}
-                min={0}
+                value={criteria.minBedrooms} // Current value of minimum bedrooms
+                onChange={(value) => handleChange('minBedrooms', value)} // Handle change in minimum bedrooms
+                min={0} // Minimum value for the number picker
                 className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
             />
           </div>
@@ -97,9 +100,9 @@ export default function SearchForm({ onSearch }) {
             <NumberPicker
                 id="maxBedrooms"
                 name="maxBedrooms"
-                value={criteria.maxBedrooms}
-                onChange={(value) => handleChange('maxBedrooms', value)}
-                min={0}
+                value={criteria.maxBedrooms} // Current value of maximum bedrooms
+                onChange={(value) => handleChange('maxBedrooms', value)} // Handle change in maximum bedrooms
+                min={0} // Minimum value for the number picker
                 className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
             />
           </div>
@@ -112,8 +115,8 @@ export default function SearchForm({ onSearch }) {
             <DatePicker
                 id="dateFrom"
                 name="dateFrom"
-                value={criteria.dateFrom}
-                onChange={(value) => handleChange('dateFrom', value)}
+                value={criteria.dateFrom} // Current value of start date
+                onChange={(value) => handleChange('dateFrom', value)} // Handle change in start date
                 className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
             />
           </div>
@@ -126,8 +129,8 @@ export default function SearchForm({ onSearch }) {
             <DatePicker
                 id="dateTo"
                 name="dateTo"
-                value={criteria.dateTo}
-                onChange={(value) => handleChange('dateTo', value)}
+                value={criteria.dateTo} // Current value of end date
+                onChange={(value) => handleChange('dateTo', value)} // Handle change in end date
                 className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
             />
           </div>
@@ -140,10 +143,10 @@ export default function SearchForm({ onSearch }) {
             <Combobox
                 id="postcode"
                 name="postcode"
-                data={['BR1', 'NW1']} // Add real postcode data
-                value={criteria.postcode}
-                onChange={(value) => handleChange('postcode', value)}
-                placeholder="Select or type postcode"
+                data={['BR1', 'NW1']} // Options for postcode area
+                value={criteria.postcode} // Current value of postcode area
+                onChange={(value) => handleChange('postcode', value)} // Handle change in postcode area
+                placeholder="Select or type postcode" // Placeholder text
                 className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
             />
           </div>
